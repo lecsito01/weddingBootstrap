@@ -1,0 +1,52 @@
+.welcomeBackground {
+    background-color: #ffbe88;
+    color: #0c5460;
+}
+
+.affix {
+    top: 0;
+    width: 100%;
+    z-index: 9999 !important;
+}
+
+.affix ~ .container-fluid {
+    position: relative;
+    top: 50px;
+}
+
+#navbar.navbar{
+    min-height: 75px;
+    font-size: 35px;
+}
+
+a.navbar-brand{
+    font-size: 35px;
+}
+
+#mainPicture {
+    -webkit-border-radius: 35%;
+    -moz-border-radius: 35%;
+    border-radius: 35%;
+}
+
+body {
+    background: url("../resources/images/gold_vintage.jpg");
+}
+
+#countDownTimerClock {
+}
+
+* {
+    font-size: 60px;
+    font-family: "Brush Script MT";
+    color: #cb9d41
+}
+
+#welcome {
+    text-align: center;
+}
+
+#roseBouquet {
+    width: 50%;
+    height: auto;
+}

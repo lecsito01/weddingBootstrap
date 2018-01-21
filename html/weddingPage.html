@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="../css/ownStyle.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Mazsi és Levi</title>
+
+</head>
+<body data-spy="scroll"
+      data-target=".navbar"
+      data-offset="50"
+>
+
+<div class="container-fluid text-center">
+    <h3>Mazsi és Levi</h3>
+    <h3>"...A Szerelem dal, amelyet együtt kell megírni."</h3>
+
+    <img src="../resources/images/mainPicture2.JPG"
+         alt="mainPicture"
+         id="mainPicture"
+    />
+</div>
+
+<nav id="navbar" class="navbar navbar-default" data-spy="affix" data-offset-top="685">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Kezdőlap</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#story">Sztorink</a>
+            </li>
+            <li>
+                <a href="#countDownTimer">A nagy napig:</a>
+            </li>
+            <li>
+                <a href="#place">Helyszín</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div id="welcome" class="row">
+    <div class="col-sm-6">
+        <img id="roseBouquet" src="../resources/images/rose_bouquet.jpg"/>
+    </div>
+    <div class="col-sm-6">
+        <h3>2018.08.19. Vasárnap</h3>
+        <br/>
+        <p>
+            Végre tényleg megtörténik!
+
+            10 év, 2 lakás, 2 város, 1 közös cica után biztosak vagyunk abban, hogy
+            együtt szeretnénk leélni az életünket. Ezt szeretnénk megünnepelni veletek!
+        </p>
+    </div>
+</div>
+
+
+<div id="story" class="container-fluid bg-2 text-center">
+    <h3>What Am I?</h3>
+    <h3>What Am I?</h3>
+    <h3>What Am I?</h3>
+    <h3>What Am I?</h3>
+    <p>Lorem ipsum..</p>
+</div>
+
+<div id="countDownTimer" class="container-fluid bg-3 text-center">
+    <h3>countDownTimer</h3>
+    <p id="countDownTimerClock"></p>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Aug 19, 2018 14:00:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("countDownTimerClock").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countDownTimerClock").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+</div>
+
+<div id="place" class="container-fluid bg-2 text-center">
+    <h3>Helyszín</h3>
+    <div id="googleMap" style="height:400px;width:100%;"></div>
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(47.6358, 21.8065);
+            var mapProp = {
+                center: myCenter,
+                zoom: 15,
+                scrollwheel: false,
+                draggable: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({position: myCenter});
+            marker.setMap(map);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTWk62GuC6kyIr77aiGipWMB57UCrZ0QI&callback=myMap"></script>
+
+
+</div>
+
+</body>
+</html>
